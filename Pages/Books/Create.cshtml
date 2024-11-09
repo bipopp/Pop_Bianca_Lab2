@@ -1,5 +1,7 @@
 ﻿@page
 @model Pop_Bianca_Lab2.Pages.Books.CreateModel
+public List<AssignedCategoryData> AssignedCategoryDataList { get; set; } = new List<AssignedCategoryData>();
+
 
 @{
     ViewData["Title"] = "Create";
@@ -76,7 +78,7 @@ danger"></span>
 </div>
 
 <div>
-    <a asp-page="/Books/Index">Back to List</a>
+    <a asp-page="./Index">Back to List</a>
 </div>
 
 @section Scripts {

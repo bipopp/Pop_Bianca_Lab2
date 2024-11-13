@@ -1,11 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.RazorPages;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Pop_Bianca_Lab2.Data;
 using Pop_Bianca_Lab2.Models;
 
 namespace Pop_Bianca_Lab2.Pages.Books
@@ -23,15 +17,13 @@ namespace Pop_Bianca_Lab2.Pages.Books
         {
             ViewData["AuthorID"] = new SelectList(_context.Set<Author>(), "ID", "FullName");
             ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
-            return Page();
-
 
             var book = new Book();
             book.BookCategories = new List<BookCategory>();
 
             PopulateAssignedCategoryData(_context, book);
 
-
+            return Page();
         }
 
         [BindProperty]

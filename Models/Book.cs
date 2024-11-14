@@ -12,7 +12,7 @@ namespace Pop_Bianca_Lab2.Models
         public string Title { get; set; }
 
         public int? AuthorID { get; set; }
-        public Author? Author { get; set; }
+        public Author Author { get; set; }
 
         [Column(TypeName = "decimal(6, 2)")]
         public decimal Price { get; set; }

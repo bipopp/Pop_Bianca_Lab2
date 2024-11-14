@@ -19,7 +19,7 @@ namespace Pop_Bianca_Lab2.Pages.Authors
             _context = context;
         }
 
-        public Author Author { get; set; } = default!;
+        public Author? Author { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {

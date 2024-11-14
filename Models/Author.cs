@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
 namespace Pop_Bianca_Lab2.Models
 {
@@ -8,7 +9,15 @@ namespace Pop_Bianca_Lab2.Models
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        [DisplayName("FullName")]
-        public string FullName => FirstName + " " + LastName;
+        [Display(Name = "Full Name")]
+        public string FullName
+        {
+            get
+            {
+                return FirstName + " " + LastName;
+            }
+        }
+        public ICollection<Book>? Books { get; set; }
+
     }
 }
